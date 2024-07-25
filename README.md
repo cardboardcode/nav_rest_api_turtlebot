@@ -8,5 +8,5 @@ Feel free to open an issue for bug reports or any requests.
 # Run
 
 ```bash
-bash scripts/5_launch.bash
+bash scripts/4_launch.bash
 ```
