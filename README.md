@@ -4,3 +4,9 @@ An example for [nav_rest_api](https://github.com/CumaOzavci/nav_rest_api) packag
 For more information visit [my blog post](https://cumaozavci.github.io/nodejs/rest/2021/04/08/ros_navigation_rest_api.html).
 
 Feel free to open an issue for bug reports or any requests.
+
+# Run
+
+```bash
+bash scripts/5_launch.bash
+```
