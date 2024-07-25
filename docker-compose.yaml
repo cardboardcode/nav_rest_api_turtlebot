@@ -2,7 +2,7 @@ version: '3'
 
 services:
    tb3_simulation_client:
-     image: ros1_turtlebot3_rest_api:simulation
+     image: ros1_turtlebot3_rest_api:latest
      volumes:
        - /tmp/.X11-unix:/tmp/.X11-unix:/tmp/.X11-unix
      environment:
