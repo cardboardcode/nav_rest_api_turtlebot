@@ -2,6 +2,7 @@ version: '3'
 
 services:
    tb3_simulation_client:
+     container_name: tb3_simulation_client_c
      image: ros1_turtlebot3_rest_api:latest
      volumes:
        - /tmp/.X11-unix:/tmp/.X11-unix:/tmp/.X11-unix
@@ -10,6 +11,7 @@ services:
      network_mode: "host"
      entrypoint: bash scripts/launch_turtlebot3_gazebo_simulation.bash
    tb3_api_server:
+     container_name: tb3_api_server_c
      image: ros1_turtlebot3_rest_api:latest
      network_mode: "host"
      entrypoint: bash /home/ubuntu/catkin_ws/src/nav_rest_api/scripts/run_server.sh
