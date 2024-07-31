@@ -21,8 +21,8 @@
     </include>
     <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
 
-    <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf"  args="-urdf -model turtlebot3_$(arg model) -x $(arg r1_x_pos) -y $(arg r1_y_pos) -z $(arg r1_z_pos) -param robot_description" />
-    <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf"  args="-urdf -model turtlebot3_$(arg model) -x $(arg r2_x_pos) -y $(arg r2_y_pos) -z $(arg r2_z_pos) -param robot_description" />
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf_1"  args="-urdf -model turtlebot3_$(arg model) -x $(arg r1_x_pos) -y $(arg r1_y_pos) -z $(arg r1_z_pos) -param robot_description" />
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf_2"  args="-urdf -model turtlebot3_$(arg model) -x $(arg r2_x_pos) -y $(arg r2_y_pos) -z $(arg r2_z_pos) -param robot_description" />
 
     <include file="$(find turtlebot3_navigation)/launch/turtlebot3_navigation.launch">
         <arg name="map_file" value="$(find nav_rest_api_turtlebot)/map/map.yaml" />
