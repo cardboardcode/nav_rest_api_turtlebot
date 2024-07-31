@@ -1,5 +1,7 @@
 #!/usr/bin/env
 
+docker rm tb3_api_server_c tb3_simulation_client_c
+
 # Ensure duplicate containers are removed
 docker compose down
 
