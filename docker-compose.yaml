@@ -8,8 +8,9 @@ services:
        - /tmp/.X11-unix:/tmp/.X11-unix:/tmp/.X11-unix
      environment:
        DISPLAY: $DISPLAY
+       TURTLEBOT3_MODEL: waffle
      network_mode: "host"
-     entrypoint: bash scripts/launch_turtlebot3_gazebo_simulation.bash
+     command: roslaunch nav_rest_api_turtlebot test.launch show_rviz_gazebo:=false
    tb3_api_server:
      container_name: tb3_api_server_c
      image: ros1_turtlebot3_rest_api:latest
