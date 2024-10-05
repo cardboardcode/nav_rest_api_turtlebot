@@ -34,7 +34,6 @@ RUN npm install
 
 WORKDIR /home/ubuntu/catkin_ws/scripts
 COPY scripts/launch_server.bash  /home/ubuntu/catkin_ws/scripts/launch_server.bash
-COPY scripts/launch_turtlebot3_gazebo_simulation.bash  /home/ubuntu/catkin_ws/scripts/launch_turtlebot3_gazebo_simulation.bash
 
 RUN sed -i '$isource "/home/ubuntu/catkin_ws/devel/setup.bash"' /ros_entrypoint.sh
 
