@@ -19,7 +19,7 @@ RUN echo 'ubuntu:asdf' | chpasswd
 RUN adduser ubuntu sudo
 
 WORKDIR /home/ubuntu/catkin_ws/src
-RUN git clone -b master https://github.com/CumaOzavci/nav_rest_api.git --depth 1 --single-branch
+RUN git clone -b master https://github.com/cardboardcode/nav_rest_api.git --depth 1 --single-branch
 RUN git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3.git --depth 1 --single-branch
 RUN git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git --depth 1 --single-branch
 COPY ./ nav_rest_api_turtlebot/
