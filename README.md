@@ -1,12 +1,18 @@
-# nav_rest_api_turtlebot
-An example for [nav_rest_api](https://github.com/CumaOzavci/nav_rest_api) package.
+## **What Is This?** 
+This repository contains `nav_rest_api_turtlebot` that runs a simulation of TurtleBot3 in `tb3_world` with its own navigational planning.
 
-For more information visit [my blog post](https://cumaozavci.github.io/nodejs/rest/2021/04/08/ros_navigation_rest_api.html).
-
-Feel free to open an issue for bug reports or any requests.
-
-# Run
+## **Build** :hammer:
 
 ```bash
-bash scripts/4_launch.bash
+git clone https://github.com/cardboardcode/nav_rest_api_turtlebot --depth 1 --branch feature/nav_rest_api_swagger --single-branch
+```
+
+```bash
+docker build -t ros1_turtlebot3_rest_api .
+```
+
+## **Run** 
+
+```bash
+docker compose up
 ```
