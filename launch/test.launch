@@ -25,6 +25,4 @@
         <arg name="open_rviz" value="$(arg show_rviz_gazebo)"/>
     </include>
 
-    <!-- <include file="$(find nav_rest_api)/launch/client.launch" /> -->
-    
 </launch>
