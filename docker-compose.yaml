@@ -8,11 +8,6 @@ services:
        - /tmp/.X11-unix:/tmp/.X11-unix:/tmp/.X11-unix
      environment:
        DISPLAY: $DISPLAY
-       TURTLEBOT3_MODEL: waffle
+       TURTLEBOT3_MODEL: burger
      network_mode: "host"
      command: roslaunch nav_rest_api_turtlebot test.launch show_rviz_gazebo:=true
-  #  tb3_api_server:
-  #    container_name: tb3_api_server_c
-  #    image: ros1_turtlebot3_rest_api:latest
-  #    network_mode: "host"
-  #    entrypoint: bash /home/ubuntu/catkin_ws/src/nav_rest_api/scripts/run_server.sh
