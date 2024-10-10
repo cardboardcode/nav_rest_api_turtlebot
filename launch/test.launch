@@ -23,7 +23,7 @@
 
     <!-- spawn the mini mock charger -->
     <node pkg="gazebo_ros" type="spawn_model" name="spawn_model"
-        args="-sdf -database MiniMockCharger -model charger -y 0.5" />
+        args="-sdf -database MiniMockCharger -model charger -x -2.0 -y -0.5" />
 
     <arg name="map_file" value="$(find nav_rest_api_turtlebot)/map/map.yaml" />
     <arg name="open_rviz" value="$(arg show_rviz_gazebo)"/>
@@ -83,6 +83,12 @@
 
     </node>
 
+    <!-- AutoDock Server Node -->
+    <include file="$(find autodock_core)/launch/autodock_server.launch">
+      <arg name="autodock_config" default="$(find autodock_examples)/configs/turtlebot3.yaml"/>
+      <arg name="debug_mode" value="true" />
+    </include>
+
     <!-- move_base -->
     <arg name="odom_topic" default="odom" />
     <arg name="cmd_vel_topic" default="/cmd_vel" />
@@ -134,7 +140,7 @@
     <!-- rviz -->
     <group if="$(arg open_rviz)"> 
       <node pkg="rviz" type="rviz" name="rviz" required="true"
-            args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz"/>
+            args="-d $(find nav_rest_api_turtlebot)/rviz/test.rviz"/>
     </group>
 
 </launch>
