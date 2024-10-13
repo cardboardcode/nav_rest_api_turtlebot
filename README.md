@@ -4,7 +4,7 @@ This repository contains `nav_rest_api_turtlebot` that runs a simulation of Turt
 ## **Build** :hammer:
 
 ```bash
-git clone https://github.com/cardboardcode/nav_rest_api_turtlebot --depth 1 --branch feature/nav_rest_api_swagger --single-branch
+git clone https://github.com/cardboardcode/nav_rest_api_turtlebot --depth 1 --branch feature/tb3_autodock --single-branch
 ```
 
 ```bash
