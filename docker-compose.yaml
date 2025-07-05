@@ -10,4 +10,4 @@ services:
        DISPLAY: $DISPLAY
        TURTLEBOT3_MODEL: waffle
      network_mode: "host"
-     command: roslaunch nav_rest_api_turtlebot test.launch show_rviz_gazebo:=false
+     command: roslaunch nav_rest_api_turtlebot test.launch show_rviz_gazebo:=true
