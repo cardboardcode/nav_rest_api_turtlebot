@@ -23,5 +23,6 @@
         <arg name="map_file" value="$(find nav_rest_api_turtlebot)/map/map.yaml" />
         <arg name="open_rviz" value="$(arg show_rviz_gazebo)"/>
     </include>
-    
+
+    <node pkg="nav_rest_api_turtlebot" type="map_server.py" name="tb3_map_server"  output="screen" />
 </launch>

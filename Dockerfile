@@ -11,9 +11,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 # Setting up working directory 
-RUN useradd -ms /bin/bash ubuntu
-RUN echo 'ubuntu:asdf' | chpasswd
-RUN adduser ubuntu sudo
+# RUN useradd -ms /bin/bash ubuntu
+# RUN echo 'ubuntu:asdf' | chpasswd
+# RUN adduser ubuntu sudo
 
 WORKDIR /home/ubuntu/catkin_ws/src
 RUN git clone -b $ROS_DISTRO-devel https://github.com/ROBOTIS-GIT/turtlebot3.git --depth 1 --single-branch && \
@@ -31,7 +31,7 @@ COPY scripts/launch_server.bash  /home/ubuntu/catkin_ws/scripts/launch_server.ba
 
 RUN sed -i '$isource "/home/ubuntu/catkin_ws/devel/setup.bash"' /ros_entrypoint.sh
 
-USER ubuntu
+# USER ubuntu
 WORKDIR /home/ubuntu/catkin_ws
 
 ENTRYPOINT ["/ros_entrypoint.sh"]

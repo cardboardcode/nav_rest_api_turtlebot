@@ -5,7 +5,7 @@ services:
      container_name: tb3_simulation_client_c
      image: ros1_turtlebot3_rest_api:latest
      volumes:
-       - /tmp/.X11-unix:/tmp/.X11-unix:/tmp/.X11-unix
+       - /tmp/.X11-unix:/tmp/.X11-unix
      environment:
        DISABLE_ROS1_EOL_WARNINGS: 1
        DISPLAY: $DISPLAY
