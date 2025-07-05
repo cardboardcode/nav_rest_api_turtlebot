@@ -1,3 +1,4 @@
-docker start ros1_turtlebot3_rest_api_c
-
-docker exec -it ros1_turtlebot3_rest_api_c bash
+docker run -it --rm \
+    --name tb3_simulation_client_c \
+    --network host \
+ros1_turtlebot3_rest_api:latest bash

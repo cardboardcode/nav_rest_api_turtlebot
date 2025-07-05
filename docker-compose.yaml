@@ -7,6 +7,7 @@ services:
      volumes:
        - /tmp/.X11-unix:/tmp/.X11-unix:/tmp/.X11-unix
      environment:
+       DISABLE_ROS1_EOL_WARNINGS: 1
        DISPLAY: $DISPLAY
        TURTLEBOT3_MODEL: waffle
      network_mode: "host"
