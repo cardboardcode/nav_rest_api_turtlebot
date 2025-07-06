@@ -9,6 +9,10 @@ user_choice_lower=$(echo "$user_choice" | tr '[:upper:]' '[:lower:]')
 # Initialize the variable
 run_rviz_gazebo="false"
 
+if [ "$user_choice_lower" == "y" ]; then
+    run_rviz_gazebo="true"
+fi
+
 docker run -it --rm \
     --name tb3_simulation_client_c \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
