@@ -10,14 +10,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 			ros-$ROS_DISTRO-slam-gmapping && \
     rm -rf /var/lib/apt/lists/*
 
-# Setting up working directory 
-# RUN useradd -ms /bin/bash ubuntu
-# RUN echo 'ubuntu:asdf' | chpasswd
-# RUN adduser ubuntu sudo
-
 WORKDIR /home/ubuntu/catkin_ws/src
 RUN git clone -b $ROS_DISTRO-devel https://github.com/ROBOTIS-GIT/turtlebot3.git --depth 1 --single-branch && \
-      git clone -b $ROS_DISTRO-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git --depth 1 --single-branch
+      git clone -b $ROS_DISTRO-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git --depth 1 --single-branch && \
+      git clone -b v0.0.2 https://github.com/KABAM-Robotics/kabam_msgs.git --depth 1 --single-branch
 COPY ./ nav_rest_api_turtlebot/
 WORKDIR /home/ubuntu/catkin_ws/
 RUN apt-get update && \
