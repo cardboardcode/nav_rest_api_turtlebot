@@ -2,7 +2,7 @@
 
 import rospy
 from std_msgs.msg import String
-from kabam_msgs.srv import ParamTrigger
+from kabam_msgs.srv import ParamTrigger, ParamTriggerResponse
 
 class TB3MapServer:
     def __init__(self):
@@ -17,7 +17,7 @@ class TB3MapServer:
 
         if len(req.parameter_list) != 1:
             rospy.logwarn(f'Received invalid map request. Ignoring...')
-            return
+            return ParamTriggerResponse(success=False, message="Invalid map request.")
 
         rospy.loginfo(f'Received request to change map to [{req.parameter_list[0]}]...')
 
@@ -30,10 +30,13 @@ class TB3MapServer:
             if not self.current_map == req.parameter_list[0]:
                 rospy.loginfo(f'Current map updated from [{self.current_map}] to [{req.parameter_list[0]}]...')
                 self.current_map = req.parameter_list[0]
+                return ParamTriggerResponse(success=True, message=f"Map changed to [ {self.current_map} ].")
             else:
                 rospy.loginfo(f'Current map is already [{req.parameter_list[0]}]. No change made...')
+                return ParamTriggerResponse(success=True, message="Map already target map.")
         else:
             rospy.logwarn(f'Target map [{req.parameter_list[0]}] does not exist. Available maps: [{self.available_maps}]...')
+            return ParamTriggerResponse(success=False, message="Robot does not have target map.")
 
     def publish_map_callback(self, event=None):
         self.map_pub.publish(self.current_map)
