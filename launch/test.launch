@@ -25,4 +25,6 @@
     </include>
 
     <node pkg="nav_rest_api_turtlebot" type="map_server.py" name="tb3_map_server"  output="screen" />
+
+    <node pkg="nav_rest_api_turtlebot" type="state_aggregator.py" name="state_aggregator"  output="screen" />
 </launch>
